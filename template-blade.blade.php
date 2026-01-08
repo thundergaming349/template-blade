@@ -1,3 +1,4 @@
+//@extends('master layout')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +18,8 @@
     </header>
 
 <div class="contaner mx-auto p-5">
+    //@section('nama yield')
+    //@endsection
     //ini bisa diubah menjadi @yield('?name?')
     <div class="border-t border-b border-gray-500 text-white">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
