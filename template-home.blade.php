@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-    <div class="border-t border-b border-gray-500 text-white">
+    <div class="border-t border-b border-gray-500 text-white mb-4">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-bold text-center">Daftar Film</h1>
         </div>
@@ -25,4 +25,12 @@
             </div>
         @endforeach
     </div>
+    <hr class="text-gray-200 opacity-70 mb-7 mt-10">
+    <div class="w-full align-center">
+        <p class="text-white-400 text-lg mb-2">ingin tambah film?</p>
+        <a href="{{route('create')}}">
+        <button class="bg-blue-600 px-4 py-2 align-center rounded hover:bg-blue-500">Tambah Film</button>
+        </a>
+    </div>
+
 @endsection
