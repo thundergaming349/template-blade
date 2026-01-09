@@ -50,3 +50,7 @@
         </form>
     </div>
 @endsection
+
+/*     Route::get('/{id}/edit', [MovieController::class, 'edit'])->name('edit');  */
+/*     Route::get('/{$id}', [MovieController::class, 'update'])->name('update');  */
+/* Tambahan pada router */
