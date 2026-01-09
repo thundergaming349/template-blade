@@ -7,17 +7,21 @@
         </div>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 ">
         @foreach ($movie as $item)
-            <div class="bg-gray-800 p-4 rounded-lg relative group">
-                <img src="{{ $item['poster'] }}" alt="" class="w-full rounded-md">
-                <h3 class="text-lg mt-2">{{ $item['name'] }}</h3>
-                <p class="text-sm text-gray-400">{{ $item['year'] }}</p>
-            </div>
+            <div class="bg-gray-800 p-4 rounded-lg relative group ">
+                <a href="{{ route('showid', $loop->index) }}">
+                    <img src="{{ $item['poster'] }}" alt="" class="w-full rounded-md">
+                    <h3 class="text-lg mt-2">{{ $item['name'] }}</h3>
+                    <p class="text-sm text-gray-400">{{ $item['year'] }}</p>
+                    <p class="text-sm text-gray-400">{{ $item['duration'] }} Minutes</p>
 
-            <div class="absolute top-2 right-2 space-x-2 opacity-0 group-hover:opacity-100 transition">
-                <a href="" class="bg-green-600 p-1 rounded hover:bg-green-100">✏️</a href="">
-                <button class="bg-red-600 p-1 rounded hover:bg-red-100">🗑️</button>
+
+                    <div class="absolute top-2 right-2 space-x-2 opacity-0 group-hover:opacity-100 transition">
+                        <a href="" class="bg-green-600 p-1 rounded hover:bg-green-100">✏️</a>
+                        <button class="bg-red-600 p-1 rounded hover:bg-red-100">🗑️</button>
+                    </div>
+                </a>
             </div>
         @endforeach
     </div>
