@@ -1,4 +1,4 @@
-        $movie = [
+                $movie = [
             [
                 'name' => 'Sonic The Hedgehog 3',
                 'director' => 'Jeff Fowler',
@@ -56,5 +56,17 @@
                             dari mentornya, Skipper, dan sejumlah teman baru, Dusty berangkat untuk 
                             mewujudkan mimpinya.',
                 'genre' => ['Animation', 'Family', 'Adventure']
+            ],
+            [
+                'name' => 'Cars 2',
+                'director' => 'John Lasseter',
+                'year' => 2011,
+                'duration' => 104,
+                'poster' => 'https://media.themoviedb.org/t/p/w300_and_h450_face/okIz1HyxeVOMzYwwHUjH2pHi74I.jpg',
+                'synopsis' => 'Mobil balap terkenal Lightning McQueen dan kawannya Mater pergi untuk 
+                            bertanding pada balapan World Grand Prix. Tetapi jalan menuju kemenangan 
+                            menjadi sulit saat Mater terjebak dalam petualangannya: spionase 
+                            internasional.',
+                'genre' => ['Animation', 'Family', 'Adventure']  
             ]
         ];
