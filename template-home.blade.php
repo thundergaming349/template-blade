@@ -22,7 +22,14 @@
                     <div class="absolute top-2 right-2 space-x-2 opacity-0 group-hover:opacity-100 transition">
                         <a href="{{ route('edit', $loop->index) }}"
                             class="bg-green-600 p-1 rounded hover:bg-green-100">✏️</a>
-                        <button class="bg-red-600 p-1 rounded hover:bg-red-100">🗑️</button>
+                        <form id="delete-form-{{ $loop->index }}" action="{{ route('destroy', $loop->index) }}"
+                            style="display: none" method="POST">
+                            @csrf
+                            @method('DELETE')
+                        </form>
+                        <a href="{{ route('destroy', $loop->index) }}"
+                            onclick="event.preventDefault(); confirm('yakin?'); document.getElementById('delete-form-{{ $loop->index }}').submit()"
+                            class="bg-red-600 p-1 rounded hover:bg-red-100">🗑️</a>
                     </div>
                 </a>
             </div>
