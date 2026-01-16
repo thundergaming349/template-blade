@@ -36,7 +36,7 @@
                         class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600">
                 </div>
                 <div class="text-md">
-                    <a href="">sudah punya akun? login</a>
+                    <a href="{{ route('loginform') }}" class="hover:underline text-blue-600">sudah punya akun? login</a>
                 </div>
                 <div>
                     <button type="submit" class="bg-blue-600 px-6 py-2 rounded hover:bg-blue-500">Register</button>
