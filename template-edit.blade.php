@@ -1,36 +1,73 @@
 @extends('app')
 
-@section('content')
-    <div class="max-w-7xl flex justify-center px-4 sm:px-6 lg:px-8 mt-20">
-        <div class="h-auto w-1/3 border rounded-xl  border-gray-950 shadow-2xl shadow-gray-950 pb-5">
-            <h2 class="text-3xl font-bold mb-10 text-center mt-3">Login</h2>
-            @error('e')
-            @enderror
 
-            <form action="{{ route('login') }}" method="POST" class="space-y-6 text-center">
-                <div>
-                    <label for="judul" class="block text-lg">Email</label>
-                    <input type="text" name="email" id="judul" value=""
-                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('email')border-red-500 @enderror">
-                    @error('email')
-                        <p class="text-red-500">{{ $message }}</p>
-                    @enderror
-                </div>
-                <div>
-                    <label for="year" class="block text-lg ">Password</label>
-                    <input type="password" name="password" id="year" value=""
-                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('password')border-red-500 @enderror">
-                    @error('password')
-                        <p class="text-red-500">{{ $message }}</p>
-                    @enderror
-                    <div class="mb-5 flex justify-evenly m-5">
-                        <a href="" class="hover:underline text-blue-600">lupa password</a> <a
-                            href="{{ route('formregister') }}" class="hover:underline text-blue-500">belum punya akun?</a>
-                    </div>
-                    <div>
-                        <button type="submit" class="bg-blue-600 px-6 py-2 rounded hover:bg-blue-500">Login</button>
-                    </div>
-            </form>
-        </div>
+@section('content')
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
+        <h2 class="text-2xl font-bold mb-6">Tambah Film</h2>
+
+        <form action="{{ route('update', $id) }}" method="POST" class="space-y-6">
+            @csrf
+            @method('PUT')
+            <div>
+                <label for="judul" class="block text-lg mb-2">Judul </label>
+                <input type="text" name="judul" id="judul" value="{{ $movie->judul }}"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('judul')border-red-500 @enderror">
+                @error('judul')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="director" class="block text-lg mb-2">Director</label>
+                <input type="text" name="director" id="director" value="{{ $movie->director }}"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('director')border-red-500 @enderror">
+                @error('director')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="year" class="block text-lg mb-2">Tahun</label>
+                <input type="text" name="year" id="year" value="{{ $movie->year }}"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('year')border-red-500 @enderror">
+                @error('year')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="duration" class="block text-lg mb-2">Durasi</label>
+                <input type="text" name="duration" id="duration" value="{{ $movie->duration }}"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('duration')border-red-500 @enderror">
+                @error('duration')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="synopsis" class="block text-lg mb-2">Sinopsis</label>
+                <textarea name="synopsis" id="synopsis" cols="20" rows="5"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('synopsis')border-red-500 @enderror">{{ $movie->synopsis }}</textarea>
+                @error('synopsis')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="genre" class="block text-lg mb-2">Genre</label>
+                <input type="text" name="genre" id="genre" value="{{ $movie->genre }}"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('genre')border-red-500 @enderror">
+                @error('genre')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+            <div>
+                <label for="poster" class="block text-lg mb-2">Poster</label>
+                <input type="text" name="poster" id="poster" value="{{ $movie->poster }}"
+                    class="w-full p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('poster')border-red-500 @enderror">
+                @error('poster')
+                    <p class="text-red-500">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div>
+                <button type="submit" class="bg-blue-600 px-6 py-2 rounded hover:bg-blue-500">Ubah</button>
+            </div>
+        </form>
     </div>
 @endsection
