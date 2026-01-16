@@ -1,42 +1,39 @@
 @extends('app')
 
 @section('content')
-    <div class="max-w-7xl flex justify-center px-4 sm:px-6 lg:px-8 mt-20">
-        <div class="h-130 w-1/3 border rounded-xl border-gray-950 shadow-2xl shadow-gray-950 ">
+    <div class="max-w-7xl pb-20 flex justify-center px-4 sm:px-6 lg:px-8 mt-20 ">
+        <div class="h-auto w-1/3 border rounded-xl border-gray-950 shadow-2xl shadow-gray-950 pb-4">
             <h2 class="text-3xl font-bold mb-10 text-center mt-3">Register</h2>
 
-            <form action="" method="POST" class="space-y-6 text-center">
+            <form action="{{ route('register') }}" method="POST" class="space-y-6 text-center">
                 <div>
                     <label for="judul" class="block text-lg">Username </label>
-                    <input type="text" name="name" id="judul" value=""
-                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('judul')border-red-500 @enderror">
-                    @error('username')
+                    <input type="text" name="name" id="judul" value="{{ old('name') }}"
+                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('name')border-red-500 @enderror">
+                    @error('name')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div>
                     <label for="director" class="block text-lg ">Email</label>
-                    <input type="text" name="email" id="director" value=""
-                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('director')border-red-500 @enderror">
-                    @error('director')
+                    <input type="text" name="email" id="director" value="{{ old('email') }}"
+                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('email')border-red-500 @enderror">
+                    @error('email')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div>
-                    <label for="year" class="block text-lg ">Password</label>
-                    <input type="password" name="password" id="year" value=""
-                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('year')border-red-500 @enderror">
-                    @error('year')
+                    <label for="password" class="block text-lg ">Password</label>
+                    <input type="password" name="password" id="password" value=""
+                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('password')border-red-500 @enderror">
+                    @error('password')
                         <p class="text-red-500">{{ $message }}</p>
                     @enderror
                 </div>
                 <div>
-                    <label for="duration" class="block text-lg ">Confirm Password</label>
-                    <input type="password" name="password_confirm" id="duration" value=""
-                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 @error('duration')border-red-500 @enderror">
-                    @error('duration')
-                        <p class="text-red-500">{{ $message }}</p>
-                    @enderror
+                    <label for="password" class="block text-lg ">Confirm Password</label>
+                    <input type="password" name="password_confirmation" id="password" value=""
+                        class="w-4/5 p-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-600">
                 </div>
                 <div class="text-md">
                     <a href="">sudah punya akun? login</a>
